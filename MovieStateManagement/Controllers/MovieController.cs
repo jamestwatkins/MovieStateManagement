@@ -34,22 +34,23 @@ namespace MovieStateManagement.Controllers
             return View(sessionMovies);
         }
 
-        public IActionResult SelectMovie(Movie t)
+        public IActionResult SelectMovie(string title, int runTime)
         {
+            Movie newMovie = new Movie(title, runTime);
              string movieJSON = HttpContext.Session.GetString("CartSession") ?? "FirstTimeDoingThis";
              if (movieJSON != "FirstTimeDoingThis")
              {
                  sessionCart = JsonSerializer.Deserialize<List<Movie>>(movieJSON);
              }
 
-            if (sessionCart.Contains(t))
-            {
-                sessionCart.Add(t);
-            }
-            else
-            {
-                return View("ErrorPage");
-            }
+           // if (sessionCart.Contains(name))
+           // {
+                sessionCart.Add(newMovie);
+           // }
+           // else
+           // {
+              //  return View("ErrorPage");
+           // }
              
              movieJSON = JsonSerializer.Serialize(sessionCart);
 
@@ -67,10 +68,6 @@ namespace MovieStateManagement.Controllers
                 sessionCart = JsonSerializer.Deserialize<List<Movie>>(movieJSON);
             }
 
-            
-            movieJSON = JsonSerializer.Serialize(sessionCart);
-
-            HttpContext.Session.SetString("CartSession", movieJSON);
 
 
             
@@ -79,7 +76,12 @@ namespace MovieStateManagement.Controllers
 
         public IActionResult Reciept()
         {
-            sessionCart.Clear();
+            // sessionCart.Clear();
+            string movieJSON = HttpContext.Session.GetString("CartSession") ?? "FirstTimeDoingThis";
+            if (movieJSON != "FirstTimeDoingThis")
+            {
+                sessionCart = JsonSerializer.Deserialize<List<Movie>>(movieJSON);
+            }
 
             return View(sessionCart);
         }

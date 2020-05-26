@@ -111,3 +111,4 @@ C:\Users\James\Desktop\Bootcamp\MovieStateManagement\MovieStateManagement\obj\De
 C:\Users\James\Desktop\Bootcamp\MovieStateManagement\MovieStateManagement\obj\Debug\netcoreapp3.1\Razor\Views\Movie\ListCart.cshtml.g.cs
 C:\Users\James\Desktop\Bootcamp\MovieStateManagement\MovieStateManagement\obj\Debug\netcoreapp3.1\MovieStateManagement.csprojAssemblyReference.cache
 C:\Users\James\Desktop\Bootcamp\MovieStateManagement\MovieStateManagement\obj\Debug\netcoreapp3.1\Razor\Views\Movie\Reciept.cshtml.g.cs
+C:\Users\James\Desktop\Bootcamp\MovieStateManagement\MovieStateManagement\obj\Debug\netcoreapp3.1\Razor\Views\Movie\ErrorPage.cshtml.g.cs
