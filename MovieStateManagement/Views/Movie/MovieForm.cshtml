@@ -1,0 +1,22 @@
+﻿@model List<Movie>
+
+<table class="table-primary">
+    <tr>
+        <th>Title</th>
+        <th>Runtime</th>
+        <th>Add to Cart</th>
+    </tr>
+
+    @foreach(var movie in Model)
+    {
+        <tr>
+            <td>@movie.Title</td>
+            <td>@movie.RunTime</td>
+            <td>
+                <a href="/Movie/SelectMovie?name=@movie">Add</a>
+            </td>
+        </tr>
+    }
+</table>
+
+<a href="/Movie/ListCart">Cart</a>

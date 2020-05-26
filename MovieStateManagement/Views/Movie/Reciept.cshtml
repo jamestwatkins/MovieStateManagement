@@ -1,0 +1,24 @@
+﻿@model List<Movie>
+
+    <table class="table-primary">
+        <tr>
+            <th>Title</th>
+            <th>Runtime</th>
+            <th>Price</th>
+        </tr>
+
+        @foreach (var movie in Model)
+        {
+            <tr>
+                <td>@movie.Title</td>
+                <td>@movie.RunTime</td>
+                <td>
+                    $6.99
+                </td>
+            </tr>
+        }
+    </table>
+
+@{ double total = Model.Count * 6.99;}
+
+<p>Total: $@total</p>

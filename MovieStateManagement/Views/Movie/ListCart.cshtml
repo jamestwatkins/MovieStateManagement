@@ -1,0 +1,10 @@
+﻿@model List<Movie>
+
+    <h1>Cart</h1>
+
+@foreach (var m in Model)
+{
+    <h2>@m.Title</h2>
+}
+
+<a href="/Movie/Reciept">Reciept</a>
